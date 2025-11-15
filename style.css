@@ -1,0 +1,29 @@
+body{
+    align-content: center;
+}
+#sectionMain{
+    align-items: center;
+}
+h2{
+    color: blue;
+}
+
+#par1{
+    color: blueviolet;
+}
+
+.parrafo{
+    color: brown;
+}
+
+.card{
+    width: 300px;
+    border: 1px solid #000000;
+    border-radius: 10%;
+    padding: 15px;
+}
+
+.card img{
+    width: 200px;
+    border-radius: 10px;
+}
