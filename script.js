@@ -1,67 +1,67 @@
-
-const formulario = document.getElementById('formularioTarea');
-const inputTarea = document.getElementById('tareaNueva');
-const listaTareas = document.getElementById('lista-tareas');
+const taskForm = document.getElementById('formularioTarea');
+const taskInput = document.getElementById('tareaNueva');
+const taskList = document.getElementById('lista-tareas');
 const alertContainer = document.getElementById('alert-container');
 
-formulario.addEventListener('submit', function(e) {
+taskForm.addEventListener('submit', function(e) {
     e.preventDefault(); 
 
-    const textoTarea = inputTarea.value.trim();
+    const taskText = taskInput.value.trim();
 
-    if (textoTarea === '') {
-        formulario.classList.add('was-validated');
+    if (taskText === '') {
+        taskForm.classList.add('was-validated');
         return;
     }
 
-    agregarTarea(textoTarea);
+    addTask(taskText); 
 
-    mostrarAlerta('Tarea agregada con éxito!', 'success');
+    showAlert('Tarea agregada con éxito!', 'success');
 
 
-    inputTarea.value = '';
-    formulario.classList.remove('was-validated');
+    taskInput.value = '';
+    taskForm.classList.remove('was-validated');
 });
 
-// Función para crear agregar una nueva tarea con li
-function agregarTarea(texto) {
+// funcion nueva tarea
+function addTask(text) {
     const li = document.createElement('li');
     li.className = 'list-group-item d-flex justify-content-between align-items-center';
-    li.textContent = texto;
+    li.textContent = text;
 
-    const botonEliminar = document.createElement('button');
-    botonEliminar.className = 'btn btn-sm btn-danger eliminar-btn';
-    botonEliminar.type = 'button';
-    botonEliminar.innerHTML = '<i class="bi bi-trash"></i>'; 
+    const deleteButton = document.createElement('button');
+    deleteButton.className = 'btn btn-sm btn-danger eliminar-btn';
+    deleteButton.type = 'button';
+    deleteButton.innerHTML = '<i class="bi bi-trash"></i>'; 
 
-    botonEliminar.addEventListener('click', function() {
+    deleteButton.addEventListener('click', function() {
         this.parentNode.remove(); 
-        mostrarAlerta('Tarea eliminada.', 'warning');
+        showAlert('Tarea eliminada.', 'warning'); 
     });
 
-    li.appendChild(botonEliminar);
+    li.appendChild(deleteButton);
 
 
-    listaTareas.appendChild(li);
+
+    taskList.appendChild(li);
 }
 
-// 5. Función para mostrar la alerta temporal 
-function mostrarAlerta(mensaje, tipo) {
+// alerta funcion
+function showAlert(message, type) {
     alertContainer.innerHTML = ''; 
 
-    const alerta = document.createElement('div');
-    alerta.className = `alert alert-${tipo} alert-dismissible fade show`;
-    alerta.setAttribute('role', 'alert');
-    alerta.textContent = mensaje;
+    const alert = document.createElement('div');
+    alert.className = `alert alert-${type} alert-dismissible fade show`;
+    alert.setAttribute('role', 'alert');
+    alert.textContent = message;
 
-    alerta.innerHTML += `
+    alert.innerHTML += `
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     `;
 
-    alertContainer.appendChild(alerta);
+    alertContainer.appendChild(alert);
 
     setTimeout(() => {
-        const alertInstance = bootstrap.Alert.getOrCreateInstance(alerta);
+        const alertInstance = bootstrap.Alert.getOrCreateInstance(alert);
         alertInstance.close();
     }, 3000);
 }
@@ -69,6 +69,6 @@ function mostrarAlerta(mensaje, tipo) {
 document.querySelectorAll('.eliminar-btn').forEach(btn => {
     btn.addEventListener('click', function() {
         this.parentNode.remove();
-        mostrarAlerta('Tarea eliminada.', 'warning');
+        showAlert('Tarea eliminada.', 'warning');
     });
 });

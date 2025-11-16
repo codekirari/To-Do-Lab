@@ -1,11 +1,41 @@
-body{
+/* ------------------------------------------- */
+/* CAMBIOS PARA FOOTER ADHESIVO Y NAVBAR MORADO */
+/* ------------------------------------------- */
+
+/* 1. Asegura que el HTML y el BODY ocupen toda la altura de la ventana */
+html, body {
+    height: 100%;
+}
+
+/* 2. Habilita Flexbox y organiza los elementos hijos verticalmente */
+body {
+    display: flex; 
+    flex-direction: column;
+    /* Mantiene estilos previos */
     align-content: center;
 }
+
+/* 3. El contenedor principal (donde está el formulario y la lista) crece 
+   para empujar el footer hacia abajo, ocupando el espacio disponible */
+.container {
+    flex-grow: 1; 
+}
+
+/* 4. Color personalizado para la barra de navegación */
+.bg-app-morado {
+    background-color: rgb(83, 12, 103) !important; 
+}
+
+
+/* ------------------------------------------- */
+/* ESTILOS ORIGINALES DEL USUARIO (Mantenidos) */
+/* ------------------------------------------- */
+
 #sectionMain{
     align-items: center;
 }
 h2{
-    color: blue;
+    color: rgb(83, 12, 103);
 }
 
 #par1{

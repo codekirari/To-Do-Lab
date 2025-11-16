@@ -13,76 +13,75 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <nav class="navbar-expand-lg navbar-dark bg-primary">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#"><i class="bi bi-check2-circle me-2"></i>ToDo App</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Inicio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#lista-tareas-seccion">Tareas</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#formulario-seccion">Agregar</a>
-                    </li>
-                </ul>
-            </div>
+    
+<nav class="navbar-expand-sm navbar-dark bg-app-morado">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#"><i class="bi bi-check2-circle me-2"></i>ToDo App</a>
+        
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto"> 
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#lista-tareas-seccion">Tareas</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#formulario-seccion">Agregar</a>
+                </li>
+            </ul>
         </div>
-    </nav>
+    </div> </nav>
+    
     <div class="container my-4">
-<div id="alert-container" class="mb-4">
-    </div>
-
-<section id="formulario-seccion" class="mb-5 card p-4 shadow-sm mx-auto" style="max-width: 500px;">
-    <h1 class="h4 mb-3 text-center">Mi Lista de Tareas</h1>
-    <form id="formularioTarea" class="needs-validation" novalidate>
-        <div class="input-group">
-            <input 
-                type="text" 
-                name="tarea" 
-                id="tareaNueva" 
-                class="form-control" 
-                placeholder="Ingrese una nueva tarea" 
-                required
-            >
-            <div class="invalid-feedback">
-                Por favor, ingresa una tarea válida para continuar.
-            </div>
-            
-            <button type="submit" id="agregar" class="btn btn-primary">
-                <i class="bi bi-plus-lg me-1"></i> Agregar
-            </button>
+        <div id="alert-container" class="mb-4">
         </div>
-    </form>
-</section>
 
-<section id="lista-tareas-seccion">
-    <h2 class="h5 mb-3">Tareas Pendientes</h2>
-    <ul id="lista-tareas" class="list-group">
-        <li class="list-group-item d-flex justify-content-between align-items-center">
-            Estudiar HTML
-            <button class="btn btn-sm btn-danger eliminar-btn" type="button"><i class="bi bi-trash"></i></button>
-        </li>
-        <li class="list-group-item d-flex justify-content-between align-items-center">
-            Estudiar JS
-            <button class="btn btn-sm btn-danger eliminar-btn" type="button"><i class="bi bi-trash"></i></button>
-        </li>
-        <li class="list-group-item d-flex justify-content-between align-items-center">
-            Tomar café
-            <button class="btn btn-sm btn-danger eliminar-btn" type="button"><i class="bi bi-trash"></i></button>
-        </li>
-    </ul>
-</section>
+        <section id="formulario-seccion" class="mb-5 card p-4 shadow-sm mx-auto" style="max-width: 500px;">
+            <h1 class="h4 mb-3 text-center">Mi Lista de Tareas</h1>
+            <form id="formularioTarea" class="needs-validation" novalidate>
+                <div class="input-group">
+                    <input 
+                        type="text" 
+                        name="tarea" 
+                        id="tareaNueva" 
+                        class="form-control" 
+                        placeholder="Ingrese una nueva tarea" 
+                        required
+                    >
+                    <div class="invalid-feedback">
+                        Por favor, ingresa una tarea válida para continuar.
+                    </div>
+                    
+                    <button type="submit" id="agregar" class="btn btn-primary">
+                        <i class="bi bi-plus-lg me-1"></i> Agregar
+                    </button>
+                </div>
+            </form>
+        </section>
 
-    </div>
-
-
-</div> 
+        <section id="lista-tareas-seccion">
+            <h2 class="h5 mb-3">Tareas Pendientes</h2>
+            <ul id="lista-tareas" class="list-group">
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    Estudiar HTML
+                    <button class="btn btn-sm btn-danger eliminar-btn" type="button"><i class="bi bi-trash"></i></button>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    Estudiar JS
+                    <button class="btn btn-sm btn-danger eliminar-btn" type="button"><i class="bi bi-trash"></i></button>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    Tomar café
+                    <button class="btn btn-sm btn-danger eliminar-btn" type="button"><i class="bi bi-trash"></i></button>
+                </li>
+            </ul>
+        </section>
+    </div> 
     
     <footer class="bg-light text-center py-3 mt-5 border-top">
         <div class="container">
@@ -99,13 +98,8 @@
             </div>
         </div>
     </footer>
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHzI" crossorigin="anonymous"></script>
-    <script src="script.js"></script>
-</body>
-</html>
-
-
-   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHzI" crossorigin="anonymous"></script>
     <script src="script.js"></script>
 </body>
 </html>
