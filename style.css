@@ -6,7 +6,7 @@ html, body {
 body {
     display: flex; 
     flex-direction: column;
-    align-content: center;
+    background-color: #f7f7f9;
 }
 
 
@@ -16,8 +16,10 @@ body {
 
 
 .bg-app-morado {
-    background-color: #4E8BBF!important; 
+    background-color: #45214A !important; 
 }
+
+
 
 
 #sectionMain{
@@ -36,13 +38,21 @@ h2{
 }
 
 .card{
-    width: 300px;
-    border: 1px solid #000000;
-    border-radius: 10%;
-    padding: 15px;
+    width: 100%;
+    border: 2px solid #45214A;
+    box-shadow: 0 10px 20px rgba(69, 33, 74, 0.15);
+    border-radius: 1.5 rem;
+    padding: 20px;
+    
 }
 
-.card img{
-    width: 200px;
-    border-radius: 10px;
+.btn-primary {
+    background-color: #5a345e !important;
+    border-color: #45214A !important;
+    transition: all 0.3s ease;
 }
+
+.btn-primary:hover {
+    background-color: #45214A !important;
+    transform: translateY(-1px); 
+
